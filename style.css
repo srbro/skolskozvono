@@ -1,0 +1,65 @@
+#container{
+    margin: 0 5% 5% 5%;
+}
+
+h1{
+    margin: 0;
+    padding: 2%;
+    text-align: center;
+}
+
+h2{
+    font-size: 5em;
+}
+
+#prvi{
+    height: auto;
+    width: auto;
+    margin: 2% 5%;
+    border: solid 1px;
+    background-color: #a4f9ef7F;
+}
+
+.period{
+    margin: 2% 1%;
+    width: 10%;
+}
+
+.subject{
+    margin: 2% 1%;
+    height: 2em;
+    width: 70% ;
+}
+
+.ukloni{
+    float: right;
+    background-color: red;
+    color: white;
+}
+
+.dodaj{
+    background-color: green;
+    color: white;
+    margin: 0 47%;
+    padding: 5px;
+}
+
+#overlay{
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 30% auto;
+    margin: 0;
+    background-color: rgba(0, 255, 85, 0.3);
+}
+
+#popup{
+    position: relative;
+    background-color: rgba(0, 17, 255, 0.801);
+    color: #FFF;
+    text-align: center  ;
+    margin: 5% 20%;
+    padding: 10% 20%;
+}
+
