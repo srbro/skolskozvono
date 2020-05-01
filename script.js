@@ -1,29 +1,57 @@
-var Prvi = '<div id="prvi"><button class="dugme ukloni" id="ukloni" href="#" onclick="ukloni(this)">X</button><div><input class="period" id="period11" type="time"><input class="period" id="period12" type="time"><input class="subject" id="subject1" type="text" placeholder="Predmet 1"></input></div></div>';
-
-
 function dodajPredmet(){
-    $("#predmeti").append(Prvi);
+
+    var brojPredmeta = document.getElementsByClassName("predmet").length + 1;
+
+    console.log("ovo je broj predmeta: "+brojPredmeta);
+
+
+
+    var predmetHtml = '<div class="predmet"><button class="dugme ukloni" id="ukloni" href="#" onclick="ukloni(this)">X</button><div><input class="period" id="period1" type="time"><input class="subject" id="subject" type="text" placeholder="Naziv predmeta"></input></div></div>';
+
+    $("#predmeti").append(predmetHtml);
 }
 
 function ukloni(e){
     $(e).parent().remove();
-    console.log("eto radi");
 }
 
 
 
 function finish(){
-
-    var trenutno = new Date();
-
-    var period11 = new Date();
-    period11.setHours(document.getElementById("period11").value.split(":")[0]);
-    period11.setMinutes(document.getElementById("period11").value.split(":")[1]);
-
-    var razlika = period11 - trenutno;
     
-    setTimeout(nekaFunkcija, razlika);
+    var predmeti = document.getElementsByClassName("predmet");
+
+    var brojPredmeta = predmeti.length;
+
+    for(i=0; i<=brojPredmeta; i++){
+
+        var period1 = brojPredmeta[i].getElementById("period1");
+
+        // var period2 = brojPredmeta[i].getElementById("period2");
+
+        var subject = brojPredmeta[i].getElementById("subject");
+
+        $("#overlay").fadeOut("slow");
+
+        var period = new Date();
+        var trenutno = new Date();
+        var minusSekunde = Date.now()%100000;
+
+        period.setHours(document.getElementById("period1").value.split(":")[0]);
+        period.setMinutes(document.getElementById("period1").value.split(":")[1]);
+
+        var razlika = period - trenutno - minusSekunde;
+
+        if(razlika>=0){
+            setTimeout(nekaFunkcija, razlika);
+        }
+
+    }
+
+    
 }
+
+
 
 function nekaFunkcija(){
     
@@ -38,6 +66,8 @@ function nekaFunkcija(){
 
 function test(){
     
-    nekaFunkcija();
+    var childcount = document.getElementById("predmeti").getElementsByClassName("predmet").length;
+
+    console.log(childcount);
     
 }
