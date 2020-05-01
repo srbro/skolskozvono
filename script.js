@@ -19,19 +19,20 @@ function ukloni(e){
 
 function finish(){
     
-    var predmeti = document.getElementsByClassName("predmet");
+    var predmeti = document.getElementsByClassName("predmeti");
 
     var brojPredmeta = predmeti.length;
 
     for(i=0; i<=brojPredmeta; i++){
 
-        var period1 = brojPredmeta[i].getElementById("period1");
+        var period1 = predmeti[i].getElementById("period1");
+
+        var subject = predmeti[i].getElementById("subject").value;
 
         // var period2 = brojPredmeta[i].getElementById("period2");
 
-        var subject = brojPredmeta[i].getElementById("subject");
-
-        $("#overlay").fadeOut("slow");
+        
+        
 
         var period = new Date();
         var trenutno = new Date();
@@ -43,7 +44,7 @@ function finish(){
         var razlika = period - trenutno - minusSekunde;
 
         if(razlika>=0){
-            setTimeout(nekaFunkcija, razlika);
+            setTimeout(nekaFunkcija(subject, period), razlika);
         }
 
     }
@@ -53,12 +54,20 @@ function finish(){
 
 
 
-function nekaFunkcija(){
+function nekaFunkcija(subject, period){
+
+    console.log("ovo je subject koji je prosledjen nekoj funkciji: "+subject);
+    console.log("ovo je period koji je prosledjen nekoj funkciji: "+period);
+
+    $("#overlay").fadeOut("slow");
     
-    var subjectX = document.getElementById("subject1").value;
-    console.log(subjectX);
+    
+    
     new Audio("school-bell-sound.mp3").play();
-    alert(subjectX);
+    
+    $("#subject").html
+    $("#overlay").fadeIn("slow");
+
 }
 
 
