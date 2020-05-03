@@ -21,11 +21,22 @@ function ukloni(e){
     $(e).parent().remove();
 }
 
+function ukloniOverlay(e){
+    $(e).parent().css("display", "none");
+}
+
 
 
 function start(){
 
-
+    if(document.getElementsByClassName("period")[0].value <= 0){
+        $("#overlay").css("display", "block");
+        $("#popup h2").html("Časovi su počeli");
+    }
+    else{
+        $("#overlay").css("display", "block");
+        $("#popup h2").html("Časovi počinju u "+document.getElementsByClassName("period")[0].value);
+    }
 
     var razlikaLista = [];
     var subjectLista = [];

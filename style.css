@@ -36,6 +36,10 @@ h2{
     color: white;
 }
 
+#ukloniOverlay{
+    float: left;
+}
+
 .dodaj{
     background-color: green;
     color: white;
@@ -57,8 +61,8 @@ h2{
     position: relative;
     background-color: rgba(0, 17, 255, 0.801);
     color: #FFF;
-    text-align: center  ;
+    text-align: center;
     margin: 5% 20%;
-    padding: 10% 20%;
+    padding: 5% 10%;
 }
 
