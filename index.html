@@ -11,7 +11,7 @@
 <body>
     <div id="overlay">
         <div id="popup">
-            <h2 id="subject">SRPSKI</h2>
+            <h2 id="subjectToDisplay">SRPSKI</h2>
         </div>
     </div>
     <div id="container">
@@ -24,10 +24,12 @@
 
                 <button class="dugme ukloni" id="ukloni" href="#" onclick="ukloni(this)">X</button>
 
-                <div>
+                <div class="josJedanDiv">
+
+                    
+
                     <input class="period" id="period1" type="time">
-                    <!-- <input class="period" id="period12" type="time"> -->
-                    <input class="subject" id="subject1" type="text" placeholder="Predmet 1">
+                    <input class="subject" id="subject1" type="text" placeholder="Naziv predmeta">
                 </div>
                 
 
@@ -37,10 +39,7 @@
 
         <button onclick="dodajPredmet()" class="dodaj" href="#">Dodaj Predmet</button>
         <br><br>
-        <button onclick="finish()" class="dodaj" href="#">START</button>
-
-        <br><br><br><br><button id="test" onclick="test()" >test</button>
-
+        <button onclick="start()" class="dodaj" href="#">START</button>
 
 
     </div>
