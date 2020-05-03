@@ -1,3 +1,11 @@
+$(document).ready(function(){
+    $(function(){
+        $("#predmeti").sortable();
+        // $("#predmeti").disableSelection();
+    });
+});
+
+
 function dodajPredmet(){
 
     var brojPredmeta = document.getElementsByClassName("predmet").length + 1;
@@ -6,6 +14,8 @@ function dodajPredmet(){
 
     $("#predmeti").append(predmetHtml);
 }
+
+
 
 function ukloni(e){
     $(e).parent().remove();
